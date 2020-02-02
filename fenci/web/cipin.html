@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>词频分析</title>
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/wordcloud2.js"></script>
+</head>
+
+<body>
+    <canvas id="app" width="4096px" height="2160px"></canvas>
+    <script>
+        $.get('/cipin', data => {
+            WordCloud(document.getElementById('app'), {
+                list: JSON.parse(data),
+                weightFactor: 0.5,
+                minSize: 9,
+                shape: 'cardioid'
+            })
+        })
+    </script>
+</body>
+
+</html>

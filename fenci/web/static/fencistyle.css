@@ -1,0 +1,47 @@
+.segment {
+    font-size: 1.5rem;
+}
+
+.kind-n {
+    color: #e45151;
+}
+
+.kind-np {
+    color: #e45151;
+}
+
+.kind-id {
+    color: #e45151;
+}
+
+.kind-v {
+    color: #f0b262;
+}
+
+.kind-w {
+    color: #888888;
+}
+
+.kind-m {
+    color: #88c461;
+}
+
+.kind-r {
+    color: #55b2f0;
+}
+
+.kind-p {
+    color: #9055f0;
+}
+
+.kind-y {
+    color: #51e4bf;
+}
+
+.kind-d {
+    color: #9055f0;
+}
+
+.kind-c {
+    color: #5167e4;
+}

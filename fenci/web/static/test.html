@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Force-directed Graph</title>
+  <script src="/static/3d-force-graph.min.js"></script>
+  <script src="/static/three.min.js"></script>
+  <script src="/static/three-spritetext.min.js"></script>
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script>
+    // Random tree
+
+    const Graph = ForceGraph3D()
+    Graph(document.getElementById('3d-graph'))
+      .jsonUrl(encodeURI(window.origin + encodeURI('/ciming?key=彗星')))
+      .nodeRelSize(2)
+      .nodeLabel(node => {
+        return node.id
+      })
+      .nodeAutoColorBy('val')
+      .nodeThreeObject(node => {
+        const sprite = new SpriteText(node.id)
+        sprite.color = node.color
+        sprite.textHeight = 3
+        return sprite
+      })
+      .nodeVal(node => node['val'])
+      .linkWidth(0.2)
+      .linkLabel(link => link['val'])
+    Graph.renderer().setClearColor(new THREE.Color("rgb(25%, 25%, 25%)"))
+
+  </script>
+</body>
+
+</html>
